@@ -320,6 +320,12 @@ kubectl get svc web -o wide
 - o cluster recebe a nova versão
 - a aplicação permanece acessível localmente para validação
 
+<p align="center">
+  <img src="docs/assets/image/08-self-hosted-runner-service-status.png" alt="Status do self-hosted runner">
+</p>
+
+<p align="center"><em>Runner self-hosted responsável pela etapa de deploy no cluster local.</em></p>
+
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
 <a id="decisoes-tecnicas-do-projeto"></a>
