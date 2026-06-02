@@ -63,12 +63,6 @@ Na prática, este repositório mostra:
 - validação de rollout no Kubernetes
 - troubleshooting real de integração entre GitHub Actions, Docker Hub e runner self-hosted
 
-<p align="center">
-  <img src="docs/assets/image/01-repo-home-readme-hero.png" alt="Home do repositório com badges e início do README">
-</p>
-
-<p align="center"><em>Visão geral do repositório na página principal do GitHub.</em></p>
-
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
 <a id="o-que-este-projeto-demonstra"></a>
@@ -112,12 +106,6 @@ flowchart LR
 5. O manifesto Kubernetes é atualizado com a nova tag da imagem.
 6. O deploy é aplicado com `kubectl`.
 7. O rollout é validado automaticamente ao final do pipeline.
-
-<p align="center">
-  <img src="docs/assets/image/02-actions-run-list-main-success.png" alt="Lista de execuções do GitHub Actions">
-</p>
-
-<p align="center"><em>Histórico de execuções bem-sucedidas do workflow na branch principal.</em></p>
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
@@ -186,7 +174,7 @@ Esse desenho ajuda a demonstrar preocupação com:
   <img src="docs/assets/image/04-dockerhub-image-tags.png" alt="Tags da imagem publicadas no Docker Hub">
 </p>
 
-<p align="center"><em>Publicação das imagens no Docker Hub com tags versionadas e <code>latest</code>.</em></p>
+<p align="center"><em>Repositório da imagem no Docker Hub com a tag <code>latest</code> publicada.</em></p>
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
@@ -331,12 +319,6 @@ kubectl get svc web -o wide
 - uma nova imagem é publicada no Docker Hub
 - o cluster recebe a nova versão
 - a aplicação permanece acessível localmente para validação
-
-<p align="center">
-  <img src="docs/assets/image/08-self-hosted-runner-service-status.png" alt="Status do self-hosted runner">
-</p>
-
-<p align="center"><em>Runner self-hosted responsável pela etapa de deploy no cluster local.</em></p>
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
