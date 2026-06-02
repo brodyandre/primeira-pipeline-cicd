@@ -12,7 +12,7 @@ env:
 jobs:
   CI:
     name: Build e Push da Imagem Docker
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Obtendo o código
