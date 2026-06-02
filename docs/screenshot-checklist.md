@@ -16,7 +16,7 @@ Este guia organiza as capturas de tela mais úteis para documentar a execução 
 ## Pasta de destino
 
 ```bash
-mkdir -p assets/screenshots
+mkdir -p assets/docs/screenshot
 ```
 
 ## Captura 1
