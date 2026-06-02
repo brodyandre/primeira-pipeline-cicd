@@ -1,6 +1,6 @@
 # Checklist de Screenshots
 
-Este guia organiza as capturas de tela mais úteis para deixar o repositório mais forte para recrutadores.
+Este guia organiza as capturas de tela mais úteis para documentar a execução do laboratório.
 
 ## Ordem sugerida
 
