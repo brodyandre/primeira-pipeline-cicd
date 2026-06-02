@@ -42,6 +42,7 @@
 - [🔄 Pipeline CI/CD](#pipeline-cicd)
 - [🧪 Teste manual da aplicação](#teste-manual-da-aplicacao)
 - [✅ Evidências de validação](#evidencias-de-validacao)
+- [🖼️ Galeria visual do laboratório](#galeria-visual-do-laboratorio)
 - [🗣️ Como apresentar este projeto em entrevistas](#como-apresentar-este-projeto-em-entrevistas)
 - [🚀 Como executar localmente](#como-executar-localmente)
 - [📈 Próximas evoluções](#proximas-evolucoes)
@@ -289,6 +290,29 @@ kubectl get svc web -o wide
 - uma nova imagem é publicada no Docker Hub
 - o cluster recebe a nova versão
 - a aplicação permanece acessível localmente para validação
+
+<p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
+
+<a id="galeria-visual-do-laboratorio"></a>
+
+## 🖼️ Galeria visual do laboratório
+
+Para fortalecer a apresentação deste projeto para recrutadores, deixei uma página dedicada para as capturas de tela do fluxo completo:
+
+- [Abrir galeria visual pronta para preenchimento](docs/galeria-visual.md)
+
+Essa página já está organizada para receber as 8 evidências que contam a história técnica do laboratório:
+
+- home do repositório com README e badges
+- lista de execuções do GitHub Actions
+- workflow detalhado com `CI` e `CD` em verde
+- tags publicadas no Docker Hub
+- estado do deploy no Kubernetes
+- aplicação respondendo no navegador
+- resposta HTTP `200 OK` no terminal
+- status do self-hosted runner em execução
+
+Depois de adicionar os arquivos em `assets/screenshots/`, basta colar o markdown indicado em cada seção da galeria.
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
