@@ -64,7 +64,7 @@ Na prática, este repositório mostra:
 - troubleshooting real de integração entre GitHub Actions, Docker Hub e runner self-hosted
 
 <p align="center">
-  <img src="assets/images/readme/01-repo-home-readme-hero.png" alt="Home do repositório com badges e início do README">
+  <img src="docs/assets/image/01-repo-home-readme-hero.png" alt="Home do repositório com badges e início do README">
 </p>
 
 <p align="center"><em>Visão geral do repositório na página principal do GitHub.</em></p>
@@ -114,7 +114,7 @@ flowchart LR
 7. O rollout é validado automaticamente ao final do pipeline.
 
 <p align="center">
-  <img src="assets/images/readme/02-actions-run-list-main-success.png" alt="Lista de execuções do GitHub Actions">
+  <img src="docs/assets/image/02-actions-run-list-main-success.png" alt="Lista de execuções do GitHub Actions">
 </p>
 
 <p align="center"><em>Histórico de execuções bem-sucedidas do workflow na branch principal.</em></p>
@@ -183,7 +183,7 @@ Esse desenho ajuda a demonstrar preocupação com:
 - segurança básica de execução
 
 <p align="center">
-  <img src="assets/images/readme/04-dockerhub-image-tags.png" alt="Tags da imagem publicadas no Docker Hub">
+  <img src="docs/assets/image/04-dockerhub-image-tags.png" alt="Tags da imagem publicadas no Docker Hub">
 </p>
 
 <p align="center"><em>Publicação das imagens no Docker Hub com tags versionadas e <code>latest</code>.</em></p>
@@ -207,7 +207,7 @@ Como o cluster roda localmente com `k3d` em ambiente WSL, o `Service` do tipo `L
 Por isso, o método mais confiável para teste manual local é usar `kubectl port-forward`.
 
 <p align="center">
-  <img src="assets/images/readme/05-kubernetes-deployment-status-terminal.png" alt="Estado do deployment no Kubernetes">
+  <img src="docs/assets/image/05-kubernetes-deployment-status-terminal.png" alt="Estado do deployment no Kubernetes">
 </p>
 
 <p align="center"><em>Estado do deployment, pods, service e imagem em execução no cluster local.</em></p>
@@ -246,7 +246,7 @@ O workflow em [`.github/workflows/main.yml`](.github/workflows/main.yml) está d
 - reduz atrito operacional em ambientes locais ou privados
 
 <p align="center">
-  <img src="assets/images/readme/03-actions-workflow-jobs-success.png" alt="Workflow com CI e CD em verde">
+  <img src="docs/assets/image/03-actions-workflow-jobs-success.png" alt="Workflow com CI e CD em verde">
 </p>
 
 <p align="center"><em>Detalhe do workflow com as etapas de CI e CD concluídas com sucesso.</em></p>
@@ -301,13 +301,13 @@ kubectl get svc web -o wide
 ```
 
 <p align="center">
-  <img src="assets/images/readme/06-application-browser-response.png" alt="Aplicação respondendo no navegador">
+  <img src="docs/assets/image/06-application-browser-response.png" alt="Aplicação respondendo no navegador">
 </p>
 
 <p align="center"><em>Aplicação acessada no navegador por meio de <code>port-forward</code>.</em></p>
 
 <p align="center">
-  <img src="assets/images/readme/07-application-http-200-terminal.png" alt="Resposta HTTP 200 no terminal">
+  <img src="docs/assets/image/07-application-http-200-terminal.png" alt="Resposta HTTP 200 no terminal">
 </p>
 
 <p align="center"><em>Validação da resposta HTTP da aplicação no terminal.</em></p>
@@ -333,7 +333,7 @@ kubectl get svc web -o wide
 - a aplicação permanece acessível localmente para validação
 
 <p align="center">
-  <img src="assets/images/readme/08-self-hosted-runner-service-status.png" alt="Status do self-hosted runner">
+  <img src="docs/assets/image/08-self-hosted-runner-service-status.png" alt="Status do self-hosted runner">
 </p>
 
 <p align="center"><em>Runner self-hosted responsável pela etapa de deploy no cluster local.</em></p>
