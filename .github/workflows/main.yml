@@ -1,16 +1,70 @@
 name: CI-CD
+
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
+
+env:
+  DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME || secrets.DOCKERHUB_USERNAME }}
+  IMAGE_NAME: primeira-pipeline-cicd
+
 jobs:
   CI:
+    name: Build e Push da Imagem Docker
     runs-on: ubuntu-latest
-    steps: 
-    - name: Otendo o código
-      uses: actions/checkout@v6
-    - name: Autenticação no Docker Hub 
-      uses: docker/login-action@v4
-      with:
-        username: ${{ vars.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    steps:
+      - name: Obtendo o código
+        uses: actions/checkout@v4
+
+      - name: Validar credenciais do Docker Hub
+        run: |
+          if [ -z "${{ env.DOCKERHUB_USERNAME }}" ]; then
+            echo "::error::Configure DOCKERHUB_USERNAME como variable ou secret do repositório."
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.DOCKERHUB_TOKEN }}" ]; then
+            echo "::error::Configure DOCKERHUB_TOKEN como secret do repositório."
+            exit 1
+          fi
+
+      - name: Autenticação no Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ env.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build e Push da Imagem Docker
+        uses: docker/build-push-action@v6
+        with:
+          context: ./src
+          file: ./src/Dockerfile
+          push: true
+          tags: |
+            ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:v${{ github.run_number }}
+            ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+
+  CD:
+    name: Deploy no Kubernetes
+    runs-on: self-hosted
+    needs: [CI]
+
+    steps:
+      - name: Obtendo o código
+        uses: actions/checkout@v4
+
+      - name: Atualizar imagem no manifesto Kubernetes
+        run: |
+          sed -i "s|image: .*|image: ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:v${{ github.run_number }}|g" k8s/deployment.yaml
+
+      - name: Aplicar manifesto no Kubernetes
+        run: |
+          kubectl apply -f k8s/deployment.yaml
+
+      - name: Verificar rollout
+        run: |
+          kubectl rollout status deployment/web
+          kubectl get pods
+          kubectl get svc
