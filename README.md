@@ -41,6 +41,7 @@
 - [☸️ Deploy no Kubernetes](#deploy-no-kubernetes)
 - [🔄 Pipeline CI/CD](#pipeline-cicd)
 - [🧪 Teste manual da aplicação](#teste-manual-da-aplicacao)
+- [🛠️ Troubleshooting](#troubleshooting)
 - [✅ Evidências de validação](#evidencias-de-validacao)
 - [🧭 Decisões técnicas do projeto](#decisoes-tecnicas-do-projeto)
 - [🚀 Como executar localmente](#como-executar-localmente)
@@ -299,6 +300,67 @@ kubectl get svc web -o wide
 </p>
 
 <p align="center"><em>Validação da resposta HTTP da aplicação no terminal.</em></p>
+
+<p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
+
+<a id="troubleshooting"></a>
+
+## 🛠️ Troubleshooting
+
+Alguns problemas recorrentes neste fluxo e como diagnosticar cada um deles rapidamente:
+
+### 1. Falha de autenticação no Docker Hub
+
+Se o job de build falhar no passo de login, confirme se:
+
+- `DOCKERHUB_USERNAME` aponta para a conta correta.
+- `DOCKERHUB_TOKEN` está salvo como secret do repositório.
+- o valor configurado é um `Personal Access Token`, principalmente quando a conta usa `2FA`.
+
+Teste local recomendado:
+
+```bash
+echo 'SEU_TOKEN' | docker login -u las43 --password-stdin
+```
+
+### 2. Job de deploy preso em `queued`
+
+Quando o job `CD` usa `self-hosted`, esse comportamento normalmente indica que o runner não está online ou não está disponível para receber novos jobs.
+
+Comando de verificação:
+
+```bash
+cd ~/actions-runner-primeira-pipeline-cicd
+sudo ./svc.sh status
+```
+
+### 3. A imagem não foi atualizada no cluster
+
+Se o pipeline termina com sucesso, mas o cluster continua usando uma versão antiga, vale confirmar a imagem aplicada e o estado do rollout:
+
+```bash
+kubectl get deployment web -o jsonpath='{.spec.template.spec.containers[0].image}' && echo
+kubectl rollout status deployment/web
+kubectl get pods -l app=web -o wide
+```
+
+### 4. O serviço não abre externamente
+
+Em ambientes locais com `k3d` ou `WSL`, um `Service` do tipo `LoadBalancer` pode não ficar acessível diretamente. Nesses casos, o teste mais estável é via `port-forward`:
+
+```bash
+kubectl port-forward svc/web 18080:80
+curl -i http://127.0.0.1:18080
+```
+
+### 5. A aplicação subiu, mas responde com erro
+
+Quando o pod está `Running`, mas a aplicação não responde como esperado, o próximo passo é inspecionar logs e eventos do pod:
+
+```bash
+kubectl logs deployment/web
+kubectl describe pod -l app=web
+```
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
