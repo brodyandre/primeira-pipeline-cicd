@@ -42,6 +42,7 @@
 - [🔄 Pipeline CI/CD](#pipeline-cicd)
 - [🧪 Teste manual da aplicação](#teste-manual-da-aplicacao)
 - [✅ Evidências de validação](#evidencias-de-validacao)
+- [🖼️ Galeria de execução](#galeria-de-execucao)
 - [🧭 Decisões técnicas do projeto](#decisoes-tecnicas-do-projeto)
 - [🚀 Como executar localmente](#como-executar-localmente)
 - [📈 Próximas evoluções](#proximas-evolucoes)
@@ -62,12 +63,6 @@ Na prática, este repositório mostra:
 - deploy automatizado em cluster local
 - validação de rollout no Kubernetes
 - troubleshooting real de integração entre GitHub Actions, Docker Hub e runner self-hosted
-
-<p align="center">
-  <img src="assets/docs/screenshot/01-repo-home-readme-hero.png" alt="Home do repositório com badges e início do README">
-</p>
-
-<p align="center"><em>Visão geral do repositório na página principal do GitHub.</em></p>
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
@@ -112,12 +107,6 @@ flowchart LR
 5. O manifesto Kubernetes é atualizado com a nova tag da imagem.
 6. O deploy é aplicado com `kubectl`.
 7. O rollout é validado automaticamente ao final do pipeline.
-
-<p align="center">
-  <img src="assets/docs/screenshot/02-actions-run-list-main-success.png" alt="Lista de execuções do GitHub Actions">
-</p>
-
-<p align="center"><em>Histórico de execuções bem-sucedidas do workflow na branch principal.</em></p>
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
@@ -182,12 +171,6 @@ Esse desenho ajuda a demonstrar preocupação com:
 - separação entre build e runtime
 - segurança básica de execução
 
-<p align="center">
-  <img src="assets/docs/screenshot/04-dockerhub-image-tags.png" alt="Tags da imagem publicadas no Docker Hub">
-</p>
-
-<p align="center"><em>Publicação das imagens no Docker Hub com tags versionadas e <code>latest</code>.</em></p>
-
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
 <a id="deploy-no-kubernetes"></a>
@@ -205,12 +188,6 @@ O arquivo [`k8s/deployment.yaml`](k8s/deployment.yaml) define:
 
 Como o cluster roda localmente com `k3d` em ambiente WSL, o `Service` do tipo `LoadBalancer` pode ficar com `EXTERNAL-IP <pending>`.
 Por isso, o método mais confiável para teste manual local é usar `kubectl port-forward`.
-
-<p align="center">
-  <img src="assets/docs/screenshot/05-kubernetes-deployment-status-terminal.png" alt="Estado do deployment no Kubernetes">
-</p>
-
-<p align="center"><em>Estado do deployment, pods, service e imagem em execução no cluster local.</em></p>
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
@@ -244,12 +221,6 @@ O workflow em [`.github/workflows/main.yml`](.github/workflows/main.yml) está d
 - usa runner hospedado para a etapa de `CI` e runner local para a etapa de `CD`
 - aproxima o `kubectl` do cluster que realmente recebe a atualização
 - reduz atrito operacional em ambientes locais ou privados
-
-<p align="center">
-  <img src="assets/docs/screenshot/03-actions-workflow-jobs-success.png" alt="Workflow com CI e CD em verde">
-</p>
-
-<p align="center"><em>Detalhe do workflow com as etapas de CI e CD concluídas com sucesso.</em></p>
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
@@ -300,18 +271,6 @@ kubectl get pods -l app=web -o wide
 kubectl get svc web -o wide
 ```
 
-<p align="center">
-  <img src="assets/docs/screenshot/06-application-browser-response.png" alt="Aplicação respondendo no navegador">
-</p>
-
-<p align="center"><em>Aplicação acessada no navegador por meio de <code>port-forward</code>.</em></p>
-
-<p align="center">
-  <img src="assets/docs/screenshot/07-application-http-200-terminal.png" alt="Resposta HTTP 200 no terminal">
-</p>
-
-<p align="center"><em>Validação da resposta HTTP da aplicação no terminal.</em></p>
-
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
 <a id="evidencias-de-validacao"></a>
@@ -332,11 +291,38 @@ kubectl get svc web -o wide
 - o cluster recebe a nova versão
 - a aplicação permanece acessível localmente para validação
 
-<p align="center">
-  <img src="assets/docs/screenshot/08-self-hosted-runner-service-status.png" alt="Status do self-hosted runner">
-</p>
+<p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
-<p align="center"><em>Runner self-hosted responsável pela etapa de deploy no cluster local.</em></p>
+<a id="galeria-de-execucao"></a>
+
+## 🖼️ Galeria de execução
+
+Esta seção centraliza as capturas de tela mais úteis para documentar a execução do fluxo completo.
+Os arquivos podem ser adicionados em `assets/docs/screenshot/` usando os nomes abaixo.
+
+| Captura | Arquivo esperado | Conteúdo |
+| --- | --- | --- |
+| 1 | `assets/docs/screenshot/01-repo-home-readme-hero.png` | Home do repositório com badges e início do README |
+| 2 | `assets/docs/screenshot/02-actions-run-list-main-success.png` | Lista de execuções do GitHub Actions |
+| 3 | `assets/docs/screenshot/03-actions-workflow-jobs-success.png` | Workflow com `CI` e `CD` concluídos |
+| 4 | `assets/docs/screenshot/04-dockerhub-image-tags.png` | Tags publicadas no Docker Hub |
+| 5 | `assets/docs/screenshot/05-kubernetes-deployment-status-terminal.png` | Estado do `Deployment`, `Pod`, `Service` e imagem em uso |
+| 6 | `assets/docs/screenshot/06-application-browser-response.png` | Aplicação respondendo no navegador |
+| 7 | `assets/docs/screenshot/07-application-http-200-terminal.png` | Resposta HTTP `200 OK` no terminal |
+| 8 | `assets/docs/screenshot/08-self-hosted-runner-service-status.png` | Status do self-hosted runner |
+
+### Blocos prontos para uso
+
+```md
+![Home do repositório](assets/docs/screenshot/01-repo-home-readme-hero.png)
+![Lista de execuções do GitHub Actions](assets/docs/screenshot/02-actions-run-list-main-success.png)
+![Workflow com CI e CD em verde](assets/docs/screenshot/03-actions-workflow-jobs-success.png)
+![Tags da imagem no Docker Hub](assets/docs/screenshot/04-dockerhub-image-tags.png)
+![Estado do deployment no Kubernetes](assets/docs/screenshot/05-kubernetes-deployment-status-terminal.png)
+![Aplicação respondendo no navegador](assets/docs/screenshot/06-application-browser-response.png)
+![Resposta HTTP 200 no terminal](assets/docs/screenshot/07-application-http-200-terminal.png)
+![Status do self-hosted runner](assets/docs/screenshot/08-self-hosted-runner-service-status.png)
+```
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
