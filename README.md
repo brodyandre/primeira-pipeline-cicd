@@ -33,7 +33,6 @@
 
 - [🎯 Visão Geral](#visao-geral)
 - [✨ O que este projeto demonstra](#o-que-este-projeto-demonstra)
-- [🥉🥈🥇 Níveis de maturidade da solução](#niveis-de-maturidade-da-solucao)
 - [🏗️ Arquitetura e fluxo](#arquitetura-e-fluxo)
 - [🧰 Stack utilizada](#stack-utilizada)
 - [📁 Estrutura do repositório](#estrutura-do-repositorio)
@@ -78,20 +77,6 @@ Na prática, este repositório mostra:
 - **Execução híbrida**: `CI` em `ubuntu-latest` e `CD` em runner self-hosted com acesso ao cluster local.
 - **Kubernetes na prática**: `Deployment`, `Service`, rollout e verificação pós-deploy.
 - **Capacidade de debugging**: correção de falhas de autenticação e de orquestração do runner.
-
-<p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
-
-<a id="niveis-de-maturidade-da-solucao"></a>
-
-## 🥉🥈🥇 Níveis de maturidade da solução
-
-Uma forma simples de interpretar a evolução deste projeto é por camadas de maturidade:
-
-- **Bronze**: aplicação funcional, versionada, com `Dockerfile` e execução local previsível.
-- **Silver**: automação de `CI/CD`, publicação da imagem em registry, uso de `secrets` e deploy automatizado no cluster.
-- **Gold**: operação mais robusta, com observabilidade, testes adicionais, políticas de segurança, rollback mais sofisticado e controles de qualidade mais fortes.
-
-Hoje, este repositório já cobre bem a camada **Silver** e começa a se aproximar de uma camada **Gold** ao incluir deploy automatizado em Kubernetes local, validação de rollout e troubleshooting documentado. As evoluções restantes estão mapeadas na seção de melhorias futuras.
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
