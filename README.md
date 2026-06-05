@@ -298,30 +298,30 @@ kubectl get svc web -o wide
 ## 🖼️ Galeria de execução
 
 Esta seção centraliza as capturas de tela mais úteis para documentar a execução do fluxo completo.
-Os arquivos podem ser adicionados em `assets/docs/screenshot/` usando os nomes abaixo.
+Os arquivos podem ser adicionados em `assets/screenshots/` usando os nomes abaixo.
 
 | Captura | Arquivo esperado | Conteúdo |
 | --- | --- | --- |
-| 1 | `assets/docs/screenshot/01-repo-home-readme-hero.png` | Home do repositório com badges e início do README |
-| 2 | `assets/docs/screenshot/02-actions-run-list-main-success.png` | Lista de execuções do GitHub Actions |
-| 3 | `assets/docs/screenshot/03-actions-workflow-jobs-success.png` | Workflow com `CI` e `CD` concluídos |
-| 4 | `assets/docs/screenshot/04-dockerhub-image-tags.png` | Tags publicadas no Docker Hub |
-| 5 | `assets/docs/screenshot/05-kubernetes-deployment-status-terminal.png` | Estado do `Deployment`, `Pod`, `Service` e imagem em uso |
-| 6 | `assets/docs/screenshot/06-application-browser-response.png` | Aplicação respondendo no navegador |
-| 7 | `assets/docs/screenshot/07-application-http-200-terminal.png` | Resposta HTTP `200 OK` no terminal |
-| 8 | `assets/docs/screenshot/08-self-hosted-runner-service-status.png` | Status do self-hosted runner |
+| 1 | `assets/screenshots/01-repo-home-readme-hero.png` | Home do repositório com badges e início do README |
+| 2 | `assets/screenshots/02-actions-run-list-main-success.png` | Lista de execuções do GitHub Actions |
+| 3 | `assets/screenshots/03-actions-workflow-jobs-success.png` | Workflow com `CI` e `CD` concluídos |
+| 4 | `assets/screenshots/04-dockerhub-image-tags.png` | Tags publicadas no Docker Hub |
+| 5 | `assets/screenshots/05-kubernetes-deployment-status-terminal.png` | Estado do `Deployment`, `Pod`, `Service` e imagem em uso |
+| 6 | `assets/screenshots/06-application-browser-response.png` | Aplicação respondendo no navegador |
+| 7 | `assets/screenshots/07-application-http-200-terminal.png` | Resposta HTTP `200 OK` no terminal |
+| 8 | `assets/screenshots/08-self-hosted-runner-service-status.png` | Status do self-hosted runner |
 
 ### Blocos prontos para uso
 
 ```md
-![Home do repositório](assets/docs/screenshot/01-repo-home-readme-hero.png)
-![Lista de execuções do GitHub Actions](assets/docs/screenshot/02-actions-run-list-main-success.png)
-![Workflow com CI e CD em verde](assets/docs/screenshot/03-actions-workflow-jobs-success.png)
-![Tags da imagem no Docker Hub](assets/docs/screenshot/04-dockerhub-image-tags.png)
-![Estado do deployment no Kubernetes](assets/docs/screenshot/05-kubernetes-deployment-status-terminal.png)
-![Aplicação respondendo no navegador](assets/docs/screenshot/06-application-browser-response.png)
-![Resposta HTTP 200 no terminal](assets/docs/screenshot/07-application-http-200-terminal.png)
-![Status do self-hosted runner](assets/docs/screenshot/08-self-hosted-runner-service-status.png)
+![Home do repositório](assets/screenshots/01-repo-home-readme-hero.png)
+![Lista de execuções do GitHub Actions](assets/screenshots/02-actions-run-list-main-success.png)
+![Workflow com CI e CD em verde](assets/screenshots/03-actions-workflow-jobs-success.png)
+![Tags da imagem no Docker Hub](assets/screenshots/04-dockerhub-image-tags.png)
+![Estado do deployment no Kubernetes](assets/screenshots/05-kubernetes-deployment-status-terminal.png)
+![Aplicação respondendo no navegador](assets/screenshots/06-application-browser-response.png)
+![Resposta HTTP 200 no terminal](assets/screenshots/07-application-http-200-terminal.png)
+![Status do self-hosted runner](assets/screenshots/08-self-hosted-runner-service-status.png)
 ```
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
