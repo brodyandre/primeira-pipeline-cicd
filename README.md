@@ -33,7 +33,7 @@
 
 - [🎯 Visão Geral](#visao-geral)
 - [✨ O que este projeto demonstra](#o-que-este-projeto-demonstra)
-- [🥉🥈🥇 Níveis de maturidade: Bronze, Silver e Gold](#niveis-de-maturidade-da-solucao)
+- [🥉🥈🥇 Níveis de maturidade da solução](#niveis-de-maturidade-da-solucao)
 - [🏗️ Arquitetura e fluxo](#arquitetura-e-fluxo)
 - [🧰 Stack utilizada](#stack-utilizada)
 - [📁 Estrutura do repositório](#estrutura-do-repositorio)
@@ -83,7 +83,7 @@ Na prática, este repositório mostra:
 
 <a id="niveis-de-maturidade-da-solucao"></a>
 
-## 🥉🥈🥇 Níveis de maturidade: Bronze, Silver e Gold
+## 🥉🥈🥇 Níveis de maturidade da solução
 
 Uma forma simples de interpretar a evolução deste projeto é por camadas de maturidade:
 
