@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: las43/primeira-pipeline-cicd:latest
+          image: fabricioveronez/primeira-pipeline-cicd:latest
           ports:
             - containerPort: 5000
 ---
