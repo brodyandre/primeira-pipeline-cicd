@@ -31,6 +31,8 @@
 
 ## 📚 Índice
 
+Leitura sugerida: visão geral do projeto, maturidade da solução, arquitetura, pipeline e validação operacional.
+
 - [🎯 Visão Geral](#visao-geral)
 - [✨ O que este projeto demonstra](#o-que-este-projeto-demonstra)
 - [🥉🥈🥇 Níveis de maturidade: Bronze, Silver e Gold](#niveis-de-maturidade-da-solucao)
