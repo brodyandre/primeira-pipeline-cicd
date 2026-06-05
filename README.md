@@ -13,19 +13,19 @@
 </p>
 
 <p>
-  <strong>Pipeline CI/CD com Go, Docker, GitHub Actions, self-hosted runner e Kubernetes local.</strong>
+  <strong>Projeto demonstrativo de CI/CD com Go, Docker, GitHub Actions, self-hosted runner e Kubernetes local.</strong>
 </p>
 
 <p>
-  Este repositório reúne uma aplicação simples em Go com build containerizado, publicação no Docker Hub,
-  deploy automatizado em Kubernetes local e validação operacional do fluxo.
+  Este repositório foi estruturado para demonstrar habilidades práticas de automação, conteinerização, deploy contínuo,
+  troubleshooting de pipeline e operação de aplicações em cluster local.
 </p>
 
 </div>
 
 > [!IMPORTANT]
-> Este projeto cobre o ciclo completo entre código-fonte, build de imagem, publicação em registry,
-> execução do deploy e validação de rollout em Kubernetes local.
+> Este projeto tem um objetivo claro de portfólio técnico: mostrar que eu consigo sair do código-fonte até o deploy automatizado,
+> passando por build de imagem, gestão de credenciais, runner self-hosted e validação de rollout em Kubernetes.
 
 <a id="indice"></a>
 
@@ -42,8 +42,8 @@
 - [🔄 Pipeline CI/CD](#pipeline-cicd)
 - [🧪 Teste manual da aplicação](#teste-manual-da-aplicacao)
 - [✅ Evidências de validação](#evidencias-de-validacao)
-- [🖼️ Galeria de execução](#galeria-de-execucao)
-- [🧭 Decisões técnicas do projeto](#decisoes-tecnicas-do-projeto)
+- [🖼️ Galeria visual do laboratório](#galeria-visual-do-laboratorio)
+- [🗣️ Como apresentar este projeto em entrevistas](#como-apresentar-este-projeto-em-entrevistas)
 - [🚀 Como executar localmente](#como-executar-localmente)
 - [📈 Próximas evoluções](#proximas-evolucoes)
 
@@ -150,8 +150,8 @@ e responde texto puro no endpoint raiz:
 Aplicacao exemplo
 ```
 
-Esse recorte deixa o foco do repositório na esteira de entrega, no build da imagem,
-no deploy automatizado e na operação do ambiente local.
+Esse recorte é importante para portfólio: o valor deste repositório não está na complexidade de regra de negócio,
+mas sim na demonstração de domínio sobre pipeline, build, deploy e operação local.
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
@@ -215,12 +215,12 @@ O workflow em [`.github/workflows/main.yml`](.github/workflows/main.yml) está d
 - aplica o deploy com `kubectl apply`
 - valida a atualização com `kubectl rollout status`
 
-### Por que esse desenho foi adotado?
+### Por que esse desenho é interessante para recrutadores?
 
-- separa responsabilidades entre build e deploy
-- usa runner hospedado para a etapa de `CI` e runner local para a etapa de `CD`
-- aproxima o `kubectl` do cluster que realmente recebe a atualização
-- reduz atrito operacional em ambientes locais ou privados
+- mostra entendimento de separação entre build e deploy
+- mostra uso consciente de runner hospedado e runner local
+- demonstra integração entre pipeline em nuvem e infraestrutura local
+- evidencia capacidade de resolver gargalos reais de autenticação e execução
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
@@ -293,50 +293,42 @@ kubectl get svc web -o wide
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
-<a id="galeria-de-execucao"></a>
+<a id="galeria-visual-do-laboratorio"></a>
 
-## 🖼️ Galeria de execução
+## 🖼️ Galeria visual do laboratório
 
-Esta seção centraliza as capturas de tela mais úteis para documentar a execução do fluxo completo.
-Os arquivos podem ser adicionados em `assets/screenshots/` usando os nomes abaixo.
+Para fortalecer a apresentação deste projeto para recrutadores, deixei uma página dedicada para as capturas de tela do fluxo completo:
 
-| Captura | Arquivo esperado | Conteúdo |
-| --- | --- | --- |
-| 1 | `assets/screenshots/01-repo-home-readme-hero.png` | Home do repositório com badges e início do README |
-| 2 | `assets/screenshots/02-actions-run-list-main-success.png` | Lista de execuções do GitHub Actions |
-| 3 | `assets/screenshots/03-actions-workflow-jobs-success.png` | Workflow com `CI` e `CD` concluídos |
-| 4 | `assets/screenshots/04-dockerhub-image-tags.png` | Tags publicadas no Docker Hub |
-| 5 | `assets/screenshots/05-kubernetes-deployment-status-terminal.png` | Estado do `Deployment`, `Pod`, `Service` e imagem em uso |
-| 6 | `assets/screenshots/06-application-browser-response.png` | Aplicação respondendo no navegador |
-| 7 | `assets/screenshots/07-application-http-200-terminal.png` | Resposta HTTP `200 OK` no terminal |
-| 8 | `assets/screenshots/08-self-hosted-runner-service-status.png` | Status do self-hosted runner |
+- [Abrir galeria visual pronta para preenchimento](docs/galeria-visual.md)
 
-### Blocos prontos para uso
+Essa página já está organizada para receber as 8 evidências que contam a história técnica do laboratório:
 
-```md
-![Home do repositório](assets/screenshots/01-repo-home-readme-hero.png)
-![Lista de execuções do GitHub Actions](assets/screenshots/02-actions-run-list-main-success.png)
-![Workflow com CI e CD em verde](assets/screenshots/03-actions-workflow-jobs-success.png)
-![Tags da imagem no Docker Hub](assets/screenshots/04-dockerhub-image-tags.png)
-![Estado do deployment no Kubernetes](assets/screenshots/05-kubernetes-deployment-status-terminal.png)
-![Aplicação respondendo no navegador](assets/screenshots/06-application-browser-response.png)
-![Resposta HTTP 200 no terminal](assets/screenshots/07-application-http-200-terminal.png)
-![Status do self-hosted runner](assets/screenshots/08-self-hosted-runner-service-status.png)
-```
+- home do repositório com README e badges
+- lista de execuções do GitHub Actions
+- workflow detalhado com `CI` e `CD` em verde
+- tags publicadas no Docker Hub
+- estado do deploy no Kubernetes
+- aplicação respondendo no navegador
+- resposta HTTP `200 OK` no terminal
+- status do self-hosted runner em execução
+
+Depois de adicionar os arquivos em `assets/screenshots/`, basta colar o markdown indicado em cada seção da galeria.
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
-<a id="decisoes-tecnicas-do-projeto"></a>
+<a id="como-apresentar-este-projeto-em-entrevistas"></a>
 
-## 🧭 Decisões técnicas do projeto
+## 🗣️ Como apresentar este projeto em entrevistas
 
-As principais decisões adotadas neste repositório foram:
+Se eu estivesse defendendo este projeto em uma conversa técnica, eu destacaria:
 
-- **Aplicação enxuta**: a aplicação HTTP foi mantida simples para destacar o fluxo de build, publicação e deploy.
-- **CI separado de CD**: o job de `CI` empacota e publica a imagem, enquanto o job de `CD` aplica a nova versão no cluster.
-- **Runner self-hosted no deploy**: o cluster é local, então a etapa de `CD` precisa rodar em uma máquina com acesso direto ao `kubectl`.
-- **Versionamento de imagem**: o pipeline publica `latest` e também uma tag versionada com `github.run_number`.
-- **Validação pós-deploy**: o workflow confirma o rollout e o ambiente ainda pode ser validado manualmente via `port-forward` e `curl`.
+- **Objetivo**: construir uma esteira enxuta, mas real, para demonstrar domínio prático de CI/CD.
+- **Desafio principal**: integrar GitHub Actions com Docker Hub e com um cluster Kubernetes local.
+- **Decisão arquitetural**: usar `ubuntu-latest` no `CI` e `self-hosted` no `CD`, porque o cluster é local e não está acessível por um runner hospedado.
+- **Aprendizado operacional**: runner local, credenciais, fila de jobs, rollout e validação HTTP.
+- **Resultado**: aplicação publicada, deploy automatizado e fluxo reproduzível para demonstração.
+
+Esse tipo de narrativa costuma mostrar mais maturidade do que simplesmente dizer "eu sei Docker" ou "eu sei Kubernetes".
 
 <p align="right"><a href="#indice">⬆️ Voltar ao índice</a></p>
 
@@ -395,6 +387,6 @@ Algumas melhorias que deixariam este projeto ainda mais forte:
 ---
 
 <div align="center">
-  <strong>Repositório focado em build, publicação e deploy automatizado em Kubernetes local.</strong><br>
-  <sub>Um fluxo enxuto para documentar integração entre aplicação, container, pipeline e cluster. ✨</sub>
+  <strong>Feito para demonstrar engenharia de entrega, não apenas "subir uma aplicação".</strong><br>
+  <sub>Se este repositório chamar a atenção de um recrutador, ele cumpriu bem o seu papel. ✨</sub>
 </div>
